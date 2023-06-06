@@ -1,17 +1,29 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(arr, target) {
+  const numSet = new Set();
+  for (let num of arr) {
+    const mathCheck = target - num;
+    if (numSet.has(mathCheck)) {
+      return true;
+    }
+    numSet.add(num);
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  O(n) since it depends on the array length (looping through it)
 */
 
 /* 
-  Add your pseudocode here
+  variable to check if set works with a variable that checks if array has numbers that works
+  for loop to run through array elements
+  variable to do math to check if array has elements that === target
+  if else to use first variable to check math variable thingy
+  return true if yes return false if naw
 */
 
 /*
-  Add written explanation of your solution here
+  
 */
 
 // You can run `node index.js` to view these console logs
